@@ -325,7 +325,7 @@
      ============================================================ */
       // Paste your n8n PRODUCTION webhook URL (the workflow must be Active).
       const CHATBOT_WEBHOOK_URL =
-        "https://nourelkhatib7.app.n8n.cloud/webhook/3e2df53c-c67f-4ca2-a644-1dfbed9662ff";
+        "https://nourelkhatib88.app.n8n.cloud/webhook/3e2df53c-c67f-4ca2-a644-1dfbed9662ff";
 
       // Link back to the portal page.
       const PORTAL_URL = "portal_fixed.html";
@@ -337,10 +337,10 @@
       // "answer" and "output" are also accepted as fallbacks.
       function getAnswer(data) {
         if (Array.isArray(data)) data = data[0];
-        if (!data) return null;
-        const text = data.Response ?? data.answer ?? data.output;
-        return typeof text === "string" && text.trim() ? text.trim() : null;
+        const a = data && (data.answer ?? data.Response ?? data.output);
+        return typeof a === "string" ? a.trim() : null;
       }
+
       /* ============================================================ */
 
       const chat = document.getElementById("chat");
